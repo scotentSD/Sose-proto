@@ -222,28 +222,29 @@ $se-heading-darker-grey: #333;
   h1 {
     color: #333;
     font-family: "Barlow", Arial, Helvetica, sans-serif;
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 500;
 }
     h2 {
-        color: #333;
+        color: #3F2A56;
         font-family: "Barlow", Arial, Helvetica, sans-serif;
-        font-size: 24px;
+        font-size: 28px;
         font-weight: 500;
         padding: 1.2em 0 0.5em 0;
     }
     h3 {
         color: #333;
         font-family: "Barlow", Arial, Helvetica, sans-serif;
-        font-size: 20px;
+        font-size: 24px;
         font-weight: 500;
         padding: 1em 0 0.2em 0;
     }
     p, ul, li, .govuk-details__summary-text, .govuk-details__text {
         color: #333;
         font-family: "Roboto", Arial, Helvetica, sans-serif;
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 400;
+        line-height: 1.5;
         -webkit-font-smoothing: antialiased ; // seems to be needed otherwise p elements look thinner than list li
     }
     .govuk-details__summary-text {
@@ -277,34 +278,27 @@ $se-heading-darker-grey: #333;
 .button-se, a.button-se, a.button-se:active{
     font-weight: 600;
     box-shadow: 0 2px 0 white;
-    font-size: 18px;
-    border: 2px solid #09759d;
+    font-size: 16px;
+    border: 2px solid #3F2A56;
 }
 
 .button-se , .button-se:focus,  a.button-se:focus, a.button-se:visited{
-    background-color: #09759d;
+    background-color: #3F2A56;
     color: white ;
 }
 
 .button-se:hover,  a.button-se:hover {
     background-color: white; 
-    color: #09759d;
+    color: #3F2A56;
     text-decoration: none;
 }
-a.button-se-secondary,  a.button-se-secondary:visited {
-    color:  #333;
-    background-color: white;
-    border: solid 2px  #333;
+a.button-se-secondary,  a.button-se-secondary:visited, a.button-se-secondary:hover, a.button-se-secondary:focus  {
+    background-color: #3ac9d4;
+    color: black;
     padding: 7px 12px;
-    text-transform: uppercase;
-    font-size: 14px;
-    
-}
-a.button-se-secondary:hover, a.button-se-secondary:focus {
-    background-color: #333;
-    color: white;
-   
+    //text-transform: uppercase;
     text-decoration: none;
+    font-size: 18px;
     
 }
 
