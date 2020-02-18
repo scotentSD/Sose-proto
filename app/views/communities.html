@@ -1,0 +1,47 @@
+{% extends "layout_se.html" %} <!-- to use a specific branded SE layout-->
+
+{% block pageTitle %}
+ Communities
+{% endblock %}
+
+{% block postHeader %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "/home.html"
+    },
+    {
+      text: "Communities",
+      classes: "govuk-!-font-weight-bold"
+    }
+  ]
+}) }}
+
+  <div class="hero-se">Communities</div>
+{% endblock %}
+
+{% block content %}
+<div class="se">
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <p>The south of Scotland is full of vibrant communities with a rich history and culture. Our approach is to sustain and grow our communities so that our residents, businesses and visitors thrive in the places where they live, work and visit.</p> 
+          <p>Building on the work of the <a href="https://www.sosep.co.uk/" target="_blank" rel="noopener">South of Scotland Economic Partnership (SoSEP)</a> we want to continue to empower our communities to help them meet their needs and become resilient through capacity building, asset ownership and the development of social enterprise.</p>
+          <p>We will work with our social enterprises and communities to understand the contribution they make to the economy and wellbeing of the region and develop the appropriate products and services that will enable them to take forward and realise their aspirations.</p> 
+
+          {% from "button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Contact us to discuss your idea",
+            classes: "button-se",
+            href: "/contact-us.html"
+          }) }}
+
+    </div>
+</div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,88 @@
+{% extends "layout_se.html" %} <!-- to use a specific branded SE layout-->
+
+{% block pageTitle %}
+  Home
+{% endblock %}
+
+{% block postHeader %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "/home.html"
+    }
+  ]
+}) }}
+
+  <div class="hero-se">Home</div>
+{% endblock %}
+
+{% block content %}
+<div class="se">
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h2>Our vision</h2>
+          <p>Our vision is to establish the south of Scotland as a centre of opportunity, innovation and growth.</p>
+          <p>South of Scotland Enterprise will work with the people and communities across the region to grow its economy.</p> 
+          <p>By providing investment, expertise and mentoring, we’ll inspire the region to think bigger, and unlock significant opportunities for all.</p> 
+<br>
+          <p>Hear more about south of Scotland Enterprise from our chair and CEO.</p> 
+          <p>[video of Nick and Russell will be here]</p>
+   
+
+          <h2>How we can help your business and community</h2>
+           <h3>Products and services</h3>
+            <p>Trying to get your business off the ground or looking to grow an existing business? Funding can go a long way in helping you get there. Whether you’re looking for a grant or need help accessing and understanding other types of funding, we can help.</p>
+            <br>
+            {% from "button/macro.njk" import govukButton %}
+
+            {{ govukButton({
+              text: "Visit Find Business Support",
+              classes: "button-se",
+              href: "https://findbusinesssupport.gov.scot/browse-support/#!Products=/a-to-z/show+25/page+1"
+            }) }}
+     
+            <h3>Communities </h3>
+            <p>The south of Scotland is full of vibrant communities with a rich history and culture. Our 	approach is to sustain and grow our communities so that our residents, businesses and 	visitors thrive in the places where they live, work and visit. </p>
+      
+
+            {{ govukButton({
+              text: "Find out more about support for communities",
+              classes: "button-se",
+              href: "/communities.html"
+            }) }}
+
+            <h3>Events</h3>
+            <p>We have a wide range of workshops and events across the South of Scotland to help you and your business. Search now.</p>
+          
+
+            {{ govukButton({
+              text: "Visit Find Business Support for events",
+              classes: "button-se",
+              href: "https://findbusinesssupport.gov.scot/browse-support/#!Events=/distance=15/view=list/soonest-first/show+25/page+1"
+            }) }}
+
+          <h2>More about our organisation </h2>
+          <h3>What we do</h3>
+          <p>The South of Scotland Enterprise takes a fresh, collaborative approach to developing our region - to the benefit of everyone in our community. If it happens in the South, it matters to us. </p>
+
+            <p>With a wealth of people, potential, and opportunity, SOSE champions the ideas that drive our region and the incredible advantages that help establish the South of Scotland as a powerful economic centre. We represent the South of Scotland at both a national level and international level, so that everyone can recognise the vast opportunities we offer and see the South as a top destination of choice.</p>
+          <h3>SOSEP</h3>
+          <p>The South of Scotland Economic Partnership has been established to respond to the economic needs and opportunities of the South of Scotland in advance of the establishment of a new enterprise agency.</p>
+          {{ govukButton({
+            text: "Visit the SOSEP website",
+            classes: "button-se",
+            href: "https://www.sosep.co.uk/"
+          }) }}
+
+          <h3>Media Centre</h3>
+          <p>[not ready]</p>
+
+    </div>
+</div>
+</div>
+{% endblock %}
+
