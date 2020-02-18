@@ -1,0 +1,41 @@
+{% extends "layout_se.html" %} <!-- to use a specific branded SE layout-->
+
+{% block pageTitle %}
+Confirmation screen
+{% endblock %}
+
+{% block postHeader %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "/home.html"
+    },
+    {
+      text: "Confirmation of submission",
+      classes: "govuk-!-font-weight-bold"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="se">
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+        {% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+        {{ govukPanel({
+        titleText: "Thank you",
+        html: "<strong>Your enquiry has been submitted</strong><br>Thank you for contacting us, We aim to respond to all enquiries within 2 business days."
+        }) }}
+
+    </div>
+</div>
+</div>
+{% endblock %}
