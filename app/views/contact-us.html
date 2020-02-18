@@ -96,9 +96,6 @@
   classes: "govuk-input govuk-!-width-one-third"
 }) }}
 
-
-{% if  data['trading-type'] === 'trading' %}
-
 {{ govukInput({
   label: {
     text: "Business name and trading address"
@@ -108,8 +105,6 @@
   name: "companyname",
   placeholder: "Start typing your company name, trading address or postcode"
 }) }}
-
-{% endif%}
 
 {% if  data['trading-type'] === 'not-trading' %}
 
