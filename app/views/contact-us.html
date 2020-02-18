@@ -97,6 +97,7 @@
 }) }}
 
 
+{% if  data['trading-type'] === 'trading' %}
 
 {{ govukInput({
   label: {
@@ -108,8 +109,9 @@
   placeholder: "Start typing your company name, trading address or postcode"
 }) }}
 
+{% endif%}
 
-{% if  data ['trading-type'] === 'not-trading' %}
+{% if  data['trading-type'] === 'not-trading' %}
 
 {{ govukInput({
   label: {
