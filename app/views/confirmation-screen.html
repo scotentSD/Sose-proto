@@ -27,14 +27,16 @@ Confirmation screen
 
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-
-        {% from "govuk/components/panel/macro.njk" import govukPanel %}
-
-        {{ govukPanel({
-        titleText: "Thank you",
-        html: "<strong>Your enquiry has been submitted</strong><br>Thank you for contacting us, We aim to respond to all enquiries within 2 business days."
-        }) }}
-
+          <div class="govuk-panel govuk-panel--confirmation"  style="color: #3F2A56; 
+    background-color: #3ac9d4;">
+          <h1 class="govuk-panel__title">
+            Thank you
+          </h1>
+          <div class="govuk-panel__body">
+            <strong>Your enquiry has been submitted</strong><br>
+            Thank you for contacting us. We aim to respond to all enquiries within 2 business days.
+          </div>
+        </div>
     </div>
 </div>
 </div>
