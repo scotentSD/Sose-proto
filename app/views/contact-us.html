@@ -12,6 +12,10 @@
     {
       text: "Home",
       href: "/"
+    },
+    {
+      text: "Contact us",
+      classes: "govuk-!-font-weight-bold"
     }
   ]
 }) }}
@@ -23,59 +27,28 @@
 
 {% block content %}
 <div class="se">
-<p>Simply enter your information in the fields below and one of our helpful team will be in touch shortly.</p>
+<p>We are still adding service information to the site. If you can’t find the help you need, tell us a bit about your situation. We will do our best to help you.</p> 
+<p>Our lines are open from 8.30am to 5.30pm, Monday to Friday.</p>
 <p>Alternatively, you can give us a call on: <strong style="font-size: 19px"><span style="white-space: nowrap;">0300 013 3385</span></strong></p>
 <br><br>
 </div>
 {% from "select/macro.njk" import govukSelect %}
 
 {{ govukSelect({
-  id: "enquiry-type",
-  name: "enquiry-type",
+  id: "trading-type",
+  name: "trading-type",
   label: {
-    text: "What is your enquiry about?"
+    text: "Are you trading?"
   },
   items: [
     {
-      value: "choose",
-      text: "Choose from the following:",
+      value: "trading",
+      text: "Yes",
       selected: true
     },
     {
-      value: "funding",
-      text: "Fundings and grants"
-    },
-    {
-      value: "events",
-      text: "Events"
-    },
-    {
-      value: "support",
-      text: "Expert support"
-    },
-    {
-      value: "improve",
-      text: "Improving business practices"
-    },
-    {
-      value: "product",
-      text: "Product development"
-    },
-    {
-      value: "feedback",
-      text: "Provide feedback"
-    },
-    {
-      value: "foi",
-      text: "Freedom of information"
-    },
-    {
-      value: "website",
-      text: "Website technical problem"
-    },
-    {
-      value: "none",
-      text: "None of the above"
+      value: "not-trading",
+      text: "No"
     }
   ]
 }) }}
@@ -83,29 +56,19 @@
 
 {{ govukInput({
   label: {
-    text: "Full name"
+    text: "First name"
   },
-  classes: "govuk-input--width-20",
-  id: "name",
-  name: "name"
+  classes: "govuk-input govuk-!-width-one-third",
+  id: "first-name",
+  name: "first-name"
 }) }}
-
 {{ govukInput({
   label: {
-    text: "Company's name"
+    text: "Last name"
   },
-  classes: "govuk-input--width-20",
-  id: "companyname",
-  name: "companyname"
-}) }}
-
-{{ govukInput({
-  label: {
-    text: "Postcode of your company's registered address"
-  },
-  classes: "govuk-input--width-10",
-  id: "companypostcode",
-  name: "companypostcode"
+  classes: "govuk-input govuk-!-width-one-third",
+  id: "last-name",
+  name: "last-name"
 }) }}
 
 {{ govukInput({
@@ -130,8 +93,35 @@
   name: "telephone-number",
   type: "tel",
   autocomplete: "tel",
-  classes: "govuk-input--width-20"
+  classes: "govuk-input govuk-!-width-one-third"
 }) }}
+
+
+
+{{ govukInput({
+  label: {
+    text: "Business name and trading address"
+  },
+  classes: "govuk-input govuk-!-width-two-thirds",
+  id: "companyname",
+  name: "companyname",
+  placeholder: "Start typing your company name, trading address or postcode"
+}) }}
+
+
+{% if  data ['trading-type'] === 'not-trading' %}
+
+{{ govukInput({
+  label: {
+    text: "Address and postcode"
+  },
+  classes: "govuk-input govuk-!-width-two-thirds",
+  id: "companyname",
+  name: "companyname",
+  placeholder:"Start typing your address or postcode"
+}) }}
+{% endif%}
+
 
 {% from "textarea/macro.njk" import govukTextarea %}
 
@@ -158,20 +148,26 @@
   ]
 }) }}
 
+<div class="se">
+  
+    <p>You must review and accept the terms of the privacy policy to continue.</p>
+
+    <p>By ticking the box and clicking submit you confirm that you have read and agreed to the terms of  <a rel="noopener" href="/privacy.html" target="_blank">our privacy policy.</a></p>
+    
+    <p>The personal details and information provided will be used to answer your enquiry and keep you updated on its progress.</p>
+    
+    <p>They will be stored on our system which is shared with other public sector bodies.</p>
+
+</div>
 {% from "button/macro.njk" import govukButton %}
 
 {{ govukButton({
-  text: "Submit enquiry",
+  text: "Submit",
   classes: "govuk-!-margin-bottom-9 , govuk-!-margin-top-9 , button-se",
   href: "/not-ready.html"
 }) }}
 
-<div class="se">
-<p>The personal details and information provided will be used to <a rel="noopener"  href="/privacy.html" target="_blank" title="How we use your information to process your enquiry">answer your enquiry and keep you updated on its progress</a>.</p>
-<p>They will be stored on our system which is <a rel="noopener" href="/privacy.html" target="_blank" title="Collecting and sharing your data">shared with other public sector bodies</a>.</p>
-<p>By ticking the box and clicking submit you confirm that you have read and agreed to the terms of our <a rel="noopener" href="/privacy.html" target="_blank" title="How we collect, use, share and look after your personal information">privacy notice</a>.</p>
-<p>Scottish Enterprise HQ<br>Atrium Court<br>50 Waterloo Street<br>Glasgow<br>G2 6HQ</p>
-</div>
+
 {% endblock %}
 
 
