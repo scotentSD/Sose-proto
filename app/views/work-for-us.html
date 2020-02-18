@@ -1,0 +1,49 @@
+{% extends "layout_se.html" %} <!-- to use a specific branded SE layout-->
+
+{% block pageTitle %}
+ Work for us
+{% endblock %}
+
+{% block postHeader %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "/home.html"
+    },
+    {
+      text: " Work for us",
+      classes: "govuk-!-font-weight-bold"
+    }
+  ]
+}) }}
+
+  <div class="hero-se"> Work for us</div>
+{% endblock %}
+
+{% block content %}
+<div class="se">
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          
+            <p>Inspired by the opportunity to create a better, more prosperous, and more inclusive future for the South of Scotland? Love the challenge that an enterprise agency can bring? Want to create an impact? You'll be among like-minded company at South of Scotland Enterprise.</p>
+            <p>We're always looking for people to help us build a strong foundation and drive development in the South of Scotland.</p>
+            <p>We welcome</p>
+            <br>
+            [will have links to jobs]
+            <br>
+            <p>Beyond an excellent working environment, surrounded by beautiful scenery, we also offer:
+            <ul class="govuk-list govuk-list--bullet se">
+              <li>Competitive salary packages, including 30 days annual leave plus public holidays</li>
+              <li>Access to the local government pension scheme</li>
+              <li>Flexible office locations and smarter working across our regional hubs in the Scottish Borders and Dumfries & Galloway</li> 
+            </ul>
+
+    </div>
+</div>
+</div>
+{% endblock %}
+

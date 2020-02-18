@@ -1,0 +1,53 @@
+{% extends "layout_se.html" %} <!-- to use a specific branded SE layout-->
+
+{% block pageTitle %}
+Our organisation
+{% endblock %}
+
+{% block postHeader %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "/home.html"
+    },
+    {
+      text: "Who we are",
+      href: "/who-we-are.html"
+    },
+    {
+      text: "Our organisation",
+      classes: "govuk-!-font-weight-bold"
+    }
+  ]
+}) }}
+
+  <div class="hero-se">Our organisation</div>
+{% endblock %}
+
+{% block content %}
+<div class="se">
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <p>The South of Scotland Enterprise (SOSE) supports sustainable and inclusive growth across our region. In an area that is bursting with vibrant culture, great businesses, and diverse people, our role is to encourage and empower each of them. By uplifting our community, we will continue to make the South even stronger. </p>
+
+            <p>Through our regional hubs in the Borders and Dumfries and Galloway, SOSE offers accessible business, social, and infrastructure activities to help everyone feel capable and supported, no matter what they offer.</p>
+            
+            <p>SOSE helps boost our region's capacity and the potential of people and resources by: </p>
+            <ul class="govuk-list govuk-list--bullet se">
+            <li>Playing an active role in supporting growth, bringing commerce and communities together, and streamlining their route to funding, markets, and success</li>
+            <li>Showcasing this incredible part of Scotland to the world and highlighting the people and businesses that help drive it</li>
+            <li>Supporting people and organisations that help the economy of the South of Scotland - no matter how big or small they are</li>
+            <li>Building and protecting relationships with communities and businesses, while ensuring access to any specialist services or advice they need</li>
+            <li>Being a key partner between existing agencies in economic development</li>
+            <li>Acting as the voice of the South</li>
+          </ul>
+
+    </div>
+</div>
+</div>
+{% endblock %}
+

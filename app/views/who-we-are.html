@@ -1,0 +1,41 @@
+{% extends "layout_se.html" %} <!-- to use a specific branded SE layout-->
+
+{% block pageTitle %}
+ Who we are
+{% endblock %}
+
+{% block postHeader %}
+{% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "/home.html"
+    },
+    {
+      text: "Who we are",
+      classes: "govuk-!-font-weight-bold"
+    }
+  ]
+}) }}
+
+  <div class="hero-se">Who we are</div>
+{% endblock %}
+
+{% block content %}
+<div class="se">
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <p>Every region has its own unique challenges, and its own unique opportunities. Nobody understands the South of Scotland more than the people who live and work here, and we recognise the diverse experiences that help shape our community. </p>
+
+            <p>South of Scotland Enterprise sees our region as more than just a place - it's somewhere we're proud to call it home. Our work happens collaboratively across sectors, with a focus on aligning our efforts, defining and delivering a clear strategy for economic development, and applying a fresh approach to everything we do.</p> 
+            
+            <p>Innovation begins with collaboration. By giving a voice to the challenges, needs, and potential in the South, the South of Scotland Enterprise builds on our strengths and boosts opportunities for everyone in our region.</p>
+
+    </div>
+</div>
+</div>
+{% endblock %}
+
