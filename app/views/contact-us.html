@@ -32,26 +32,7 @@
 <p>Our lines are open from 8.30am to 5.30pm, Monday to Friday.</p>
   <br><br>
 </div>
-{% from "select/macro.njk" import govukSelect %}
 
-{{ govukSelect({
-  id: "trading-type",
-  name: "trading-type",
-  label: {
-    text: "Are you trading?"
-  },
-  items: [
-    {
-      value: "trading",
-      text: "Yes",
-      selected: true
-    },
-    {
-      value: "not-trading",
-      text: "No"
-    }
-  ]
-}) }}
 {% from "input/macro.njk" import govukInput %}
 
 {{ govukInput({
